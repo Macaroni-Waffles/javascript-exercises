@@ -28,13 +28,19 @@ const power = function(number1, number2) {
 
 // factorial = number * (number -1) * (number -2), etc. e.g factorial of 5 is 5 * 4 * 3 * 2 * 1 which equals 120.
 const factorial = function(number) {
-  // Create an array of length of "number", fill that array starting at index 0, map onto that array incrementing by 1.
+// To account for a 0 being entered.
+  if (number ===0) {
+    return 1;
+  }
+  else {
+  // Create an array of length of "number", fill that array starting at index 0, map onto that array incrementing by 1. "Value" and "index" could be "foo" and "bar".
   let arrayOfNumber = Array(number).fill(0).map((value, index) => index + 1);
   // Reverse the array
   arrayOfNumber = arrayOfNumber.reverse();
   // multiply each number in the array by the total
   let answer = arrayOfNumber.reduce((total, num) => total * num);
   return answer;
+  };
 };
 
 // Do not edit below this line
